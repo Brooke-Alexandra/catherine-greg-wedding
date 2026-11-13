@@ -29,7 +29,7 @@ Read this first in any session that touches this repo.
 - Collage ("la dolce vita") is a 12-column grid, two 300px rows; tiles are wrapper divs with explicit grid-area. On phones it collapses to 2 columns (see the media query).
 
 ## Photos
-- Sources: the couple's own photos; Hotel Signum's photos (permission still to be confirmed with the hotel); free Unsplash photos (`images/unsplash-*.jpg`, credited "Select photographs via Unsplash" in the footer).
+- Sources: the couple's own photos; Hotel Signum's photos (permission still to be confirmed with the hotel); free Unsplash photos (`images/unsplash-*.jpg`, no credit line (Unsplash license does not require attribution)).
 - Never use Veggiewayfarer photos (she charges $250/image; all removed).
 - Unconfirmed source, swap if not cleared before launch: `images/cliff-catamaran.jpg` (Travel) and `images/lipari-marina-corta.jpg` (Tue boat day).
 - Never use Getty / stock-agency / magazine images.
