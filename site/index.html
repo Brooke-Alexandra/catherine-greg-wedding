@@ -31,7 +31,8 @@
 #rsvp-send[disabled]{opacity:.6;cursor:default}
 #rsvp-thanks[hidden]{display:none!important}
 
-@media (max-width: 700px){header#top.trio .trio-row{grid-template-columns:1fr 1fr!important}header#top.trio .trio-row img:nth-child(2){grid-column:1 / -1;grid-row:1;aspect-ratio:4 / 5!important}header#top.trio .trio-row img{margin-top:0!important}header#top.trio .trio-meta .sep{display:none}header#top.trio .trio-meta{flex-direction:column;align-items:center}}
+
+@media (max-width: 700px){header#top.st .st-row{margin-top:20px!important;grid-template-columns:1fr 1fr!important}header#top.st .st-row img:nth-child(2){grid-column:1 / -1;grid-row:1;aspect-ratio:4 / 5!important}header#top.st .st-row img{margin-top:0!important}header#top.st .st-meta{padding-bottom:0!important;text-align:left!important}header#top.st-center .st-meta{flex-direction:column;align-items:center}header#top.st .sep{display:none}}
 </style>
 </head>
 <body>
@@ -87,16 +88,18 @@ img{max-width:100%}
 </div>
 </nav>
 
-<header id="top" class="trio" style="padding: clamp(28px, 4vw, 64px) clamp(20px, 4vw, 56px) clamp(64px, 8vw, 120px); display: flex; flex-direction: column; align-items: center; gap: clamp(28px, 4vw, 56px); text-align: center;">
-<div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+<header id="top" class="st st-split" style="padding: clamp(20px, 2.5vw, 40px) clamp(20px, 3vw, 44px) clamp(64px, 8vw, 120px);">
+<div class="st-text" style="position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 40px;">
+<div style="display: flex; flex-direction: column; gap: 12px; min-width: 0;">
 <p style="margin: 0; font-family: 'Pinyon Script', cursive; font-size: clamp(30px, 3vw, 46px); line-height: 1;">the wedding of</p>
-<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(56px, 9vw, 150px); line-height: 0.95; letter-spacing: -0.02em;">Catherine <img src="images/gpp-amp.svg" alt="&amp;" style="height: 0.66em; width: auto; vertical-align: -0.02em;"> Greg</h1>
-<p class="trio-meta" style="margin: 10px 0 0; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px;"><span>Wednesday, July 7, 2027</span><span class="sep" aria-hidden="true" style="color: #B9B1A3;">·</span><span>Hotel Signum, Salina</span></p>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(56px, 10vw, 164px); line-height: 0.9; letter-spacing: -0.02em;">Catherine <img src="images/gpp-amp.svg" alt="&amp;" style="height: 0.66em; width: auto; vertical-align: -0.02em;"> Greg</h1>
 </div>
-<div class="trio-row" style="width: 100%; max-width: 1240px; display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: clamp(12px, 2vw, 28px); align-items: start;">
-<img src="images/couple-boat.jpg" alt="Catherine and Greg on a boat below white cliffs" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 70%; margin-top: clamp(40px, 6vw, 96px); display: block;">
+<div class="st-meta" style="display: flex; flex-direction: column; gap: 8px; text-align: right; padding-bottom: clamp(70px, 7vw, 110px); font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase;"><span>Wednesday, July 7, 2027</span><span style="color: #3A3A3A;">Hotel Signum · Malfa, Salina</span></div>
+</div>
+<div class="st-row" style="position: relative; z-index: 1; margin-top: calc(-1 * clamp(40px, 5vw, 84px)); display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: clamp(14px, 2vw, 28px); align-items: start;">
+<img src="images/couple-boat.jpg" alt="Catherine and Greg on a boat below white cliffs" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 70%; margin-top: clamp(110px, 12vw, 190px); display: block;">
 <img src="images/couple-terrace.jpg" alt="Catherine and Greg on a terrace above the sea at dusk" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 84% 30%; display: block;">
-<img src="images/couple-bar.jpg" alt="Catherine and Greg sharing gelato at a whitewashed bar" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 45% 40%; margin-top: clamp(20px, 3vw, 48px); display: block;">
+<img src="images/couple-bar.jpg" alt="Catherine and Greg sharing gelato at a whitewashed bar" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 45% 40%; margin-top: clamp(80px, 8vw, 130px); display: block;">
 </div>
 </header>
 
