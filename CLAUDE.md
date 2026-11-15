@@ -6,7 +6,7 @@ Read this first in any session that touches this repo.
 - Wedding website for Catherine Honeycutt & Greg Fontana. Wedding Wednesday, July 7, 2027, Hotel Signum, Malfa, Salina (Aeolian Islands, Sicily).
 - Week: Mon Jul 5 welcome reception, Tue Jul 6 boat day + lunch on Lipari, Wed Jul 7 ceremony & reception, Thu Jul 8 farewell lunch.
 - Built and maintained by Brooke Betterton (client work). Static site in `site/` (`site/index.html` + `site/images/`). No build step. Netlify publishes only `site/` (see `netlify.toml`), so repo files like this one are never served.
-- Hosted on Cloudflare Pages (project `catherine-and-greg`, production branch `main`, output directory `site`, no build command). Every push to `main` goes live in about a minute; every other branch gets its own preview URL at `<branch>.catherine-and-greg.pages.dev`. For visual changes, push to a branch first and share that preview link; merge to `main` only when Brooke says "push it live". (Moved off Netlify Nov 15 after the free plan ran out of deploy credits; the old Netlify site is retired.)
+- Hosted on Cloudflare Pages (project `catherine-greg`, live at catherine-greg.pages.dev, production branch `main`, output directory `site`, no build command). Every push to `main` goes live in about a minute; every other branch gets its own preview URL at `<branch>.catherine-greg.pages.dev`. For visual changes, push to a branch first and share that preview link; merge to `main` only when Brooke says "push it live". (Moved off Netlify Nov 15 after the free plan ran out of deploy credits; the old Netlify site is retired.)
 - `version-pool-hero` branch = the earlier design with the Hotel Signum pool photo as the hero. Keep it; it is the fallback if Catherine prefers that hero.
 
 ## Hard rules
