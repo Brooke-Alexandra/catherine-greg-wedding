@@ -378,7 +378,7 @@ img{max-width:100%}
 
 <script>
 (function(){
-  var ENDPOINT='RSVP_ENDPOINT_URL';
+  var ENDPOINT='https://script.google.com/macros/s/AKfycbwzFQvfC1GqmuuE2T5M20t-lKPBHu7QgUBFbeFtDyGVVkTh5lK9LQFEuwes-C0oDbuQEw/exec';
   var f=document.getElementById('rsvp-form'); if(!f)return;
   var more=document.getElementById('rsvp-more'), msg=document.getElementById('rsvp-msg'), btn=document.getElementById('rsvp-send'), thanks=document.getElementById('rsvp-thanks');
   function sync(){var w=f.querySelector('input[name=wedding]:checked');var no=w&&w.value==='No';more.hidden=no;more.style.display=no?'none':'flex';more.querySelectorAll('input').forEach(function(i){i.required=!no&&i.value==='Yes'})}
