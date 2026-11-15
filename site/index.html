@@ -19,6 +19,10 @@ body{margin:0}
 .wed-row:hover .wed-rule{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){.wed-rule{transition:none}}
 a{color:#121212}a:hover{color:#5E6440}
+a[style*="background: #121212"]{transition:background-color .3s ease}
+a[style*="background: #121212"]:hover{background-color:#5E6440!important;color:#F3EFE7!important}
+a[href*="google.com/maps"]{transition:background-color .3s ease,color .3s ease}
+a[href*="google.com/maps"]:hover{background-color:#121212!important;color:#F3EFE7!important}
 .rsvp-in::placeholder{color:#7F8784;font-style:italic;opacity:1}
 .rsvp-in:focus{outline:none;border-bottom-width:2px}
 
