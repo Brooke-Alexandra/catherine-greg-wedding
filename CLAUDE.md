@@ -15,9 +15,10 @@ Read this first in any session that touches this repo.
 - Passwords and API keys never go in the repo or the chat.
 
 ## RSVP
-- RSVPs live on Joy, not on this site. The "RSVP now" button (`#rsvp-open`) opens https://withjoy.com/catherine-and-greg-jul-2027/rsvp in a pop-up `<dialog>` with an iframe, with a "open in a new tab" fallback link. Tested working in Chrome, Safari and mobile.
-- Joy's own website is in Draft; its RSVP page is public. Don't link to the Joy homepage.
-- Open question with Catherine: deadline says Dec 1 on this site, Jan 1 in her Joy RSVP question.
+- RSVPs are collected by the site's own form (`#rsvp-form`), not Joy (Catherine asked to leave Joy, Nov 15).
+- The form POSTs to a Google Apps Script web app (`RSVP_ENDPOINT_URL` in `site/index.html`). Source of that script: `rsvp/apps-script.gs`. Each reply appends a row to a Google Sheet shared with Catherine and emails her.
+- Questions mirror her Joy form: wedding (Jul 7), welcome reception (Jul 5), boat day on Lipari (Jul 6), farewell luncheon (Jul 8), optional note. One reply per guest, adults only. If "No" to the wedding, the other events are skipped and recorded as No.
+- Open question with Catherine: deadline says Dec 1 on this site, Jan 1 in her old Joy question.
 
 ## Design (locked, "Lagoon & Limestone")
 - Neutral grounds; color comes from photos. Limestone #F3EFE7 page, paper #FBFAF6, ink #121212, caper #5E6440 for small labels, sand #E8E0D2 sparingly.
