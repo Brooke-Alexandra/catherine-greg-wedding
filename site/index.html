@@ -40,7 +40,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Pinyon+Script&amp;family=Jost:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
 body{margin:0}
-.wed-rule{opacity:0;transform:scaleX(0.2);transform-origin:left center;transition:opacity .4s ease,transform .4s ease}
+.wed-rule{display:block;opacity:0;transform:translateY(6px) rotate(-14deg) scale(.85);transform-origin:12px 20px;transition:opacity .5s ease,transform .6s cubic-bezier(.34,1.56,.64,1)}
 .wed-row:hover .wed-rule{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){.wed-rule{transition:none}}
 a{color:#121212}a:hover{color:#5E6440}
@@ -146,7 +146,7 @@ img{max-width:100%}
 </article>
 
 <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; padding: 40px 0; border-bottom: 1px solid #B9B1A3; color: #121212; align-items: start; position: relative; overflow: hidden; isolation: isolate;" class="wed-row">
-<div style="display: flex; flex-direction: column; gap: 14px;"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 96px; line-height: 1;">07</span><span style="font-size: 15px; letter-spacing: 0.28em; text-transform: uppercase;">Wednesday</span><div class="wed-rule" style="width: 48px; height: 2px; background: #E2BE4A; margin-top: 12px;"></div></div>
+<div style="display: flex; flex-direction: column; gap: 14px;"><span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 96px; line-height: 1;">07</span><span style="font-size: 15px; letter-spacing: 0.28em; text-transform: uppercase;">Wednesday</span><svg class="wed-rule" aria-hidden="true" width="64" height="38" viewBox="0 0 64 38" style="margin-top: 4px; overflow: visible;"><path d="M4 9 C10 11 15 14 19 19" fill="none" stroke="#5E6440" stroke-width="1.2" stroke-linecap="round"/><path d="M10 11 C12 1 25 -2 33 3 C27 10 17 12.5 10 11 Z" fill="#5E6440"/><path d="M11 10.6 C17 8 23 5.5 29 3.6" fill="none" stroke="#FBFAF6" stroke-opacity="0.45" stroke-width="0.7"/><path d="M21 21 C22 14 30 11 38 12 C46 13 52 18 53 22 C54 23 55 23.6 56.5 24 C55 25 54 25.4 53 26 C51 31 44 34 36 33 C28 32 22 28 21 23 C20 22.4 19 21.8 18 21.2 C19.4 20.6 20.4 20.8 21 21 Z" fill="#E2BE4A"/><path d="M27 17 C30 15 34 14.4 37 14.6" fill="none" stroke="#FBFAF6" stroke-opacity="0.6" stroke-width="1.4" stroke-linecap="round"/></svg></div>
 <div style="display: flex; flex-direction: column; gap: 10px;">
 <p style="margin: 0; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #5E6440;">Jul 7 6:30 PM to Jul 8 2:00 AM</p>
 <h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.08;">Wedding Ceremony <img src="images/gpp-amp.svg" alt="and" style="height: 0.68em; width: auto; vertical-align: -0.02em;"> Reception</h3>
