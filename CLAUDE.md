@@ -39,4 +39,4 @@ Read this first in any session that touches this repo.
 ## Open items
 - Couple blurb (welcome section placeholder in brackets).
 - Catherine's phone in Q&A shows as [phone].
-- Custom domain: register in the couple's name.
+- Custom domain: register in the couple's name. When it is connected, update the og:url and og:image URLs in `site/index.html` (both branches) from catherine-greg.pages.dev to the new domain.
