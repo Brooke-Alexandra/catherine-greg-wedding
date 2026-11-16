@@ -79,6 +79,17 @@ img{max-width:100%}
   header#top h1{white-space:normal}
 }
 
+.nav-mobile{display:none}
+.nav-reply{text-decoration:none;font-size:12px;letter-spacing:.24em;text-transform:uppercase;padding:10px calc(16px - .24em) 10px 16px;border:1px solid #121212;color:#121212}
+.nav-menu-btn{background:none;border:0;padding:10px 0;font:12px Jost,"Helvetica Neue",Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#121212;cursor:pointer}
+.site-menu{position:fixed;inset:0;z-index:100;background:#F3EFE7;color:#121212;display:flex;flex-direction:column;padding:22px max(20px,env(safe-area-inset-right,0px)) max(32px,env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));overflow-y:auto}
+.site-menu[hidden]{display:none}
+.site-menu-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:22px;border-bottom:1px solid #121212}
+.site-menu-links{display:flex;flex-direction:column;gap:6px;margin:auto 0;padding:40px 0}
+.site-menu-links a{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;line-height:1.15;text-decoration:none;color:#121212}
+.site-menu-links a:hover{color:#5E6440}
+.site-menu-foot{margin:0;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#5E6440}
+@media (max-width: 760px){nav[aria-label="Main"]{flex-wrap:nowrap!important}.nav-links{display:none!important}.nav-mobile{display:flex;align-items:center;gap:22px}}
 .zoomwrap{overflow:hidden;display:block;min-width:0}
 .zoomwrap > img{display:block;width:100%!important;height:100%!important;transition:transform 1s cubic-bezier(.2,.7,.2,1);will-change:transform}
 .zoomwrap:hover > img{transform:scale(1.04)}
@@ -89,14 +100,32 @@ img{max-width:100%}
 
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 22px clamp(20px, 4vw, 56px); border-bottom: 1px solid #121212;">
 <a href="#top" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; text-decoration: none;">C <img src="images/gpp-amp.svg" alt="&amp;" style="height: 0.68em; width: auto; vertical-align: -0.02em;"> G</a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 26px; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;">
+<div class="nav-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 26px; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;">
 <a href="#schedule" style="text-decoration: none;">Schedule</a>
 <a href="#stay" style="text-decoration: none;">Where to Stay</a>
 <a href="#travel" style="text-decoration: none;">Travel</a>
 <a href="#qa" style="text-decoration: none;">Q&amp;A</a>
 <a href="#rsvp" style="text-decoration: none; padding: 10px calc(18px - 0.24em) 10px 18px; background: #121212; color: #F3EFE7;">RSVP</a>
 </div>
+<div class="nav-mobile">
+<a href="#rsvp" class="nav-reply">RSVP</a>
+<button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="site-menu">Menu</button>
+</div>
 </nav>
+<div id="site-menu" class="site-menu" hidden>
+<div class="site-menu-top">
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px;">C <img src="images/gpp-amp.svg" alt="&amp;" style="height: 0.68em; width: auto; vertical-align: -0.02em;"> G</span>
+<button type="button" class="nav-menu-btn site-menu-close">Close</button>
+</div>
+<nav aria-label="Menu" class="site-menu-links">
+<a href="#schedule">Schedule</a>
+<a href="#stay">Where to Stay</a>
+<a href="#travel">Travel</a>
+<a href="#qa">Q <img src="images/gpp-amp.svg" alt="&amp;" style="height: 0.68em; width: auto; vertical-align: -0.02em;"> A</a>
+<a href="#rsvp">RSVP</a>
+</nav>
+<p class="site-menu-foot">07 · 07 · 2027 · Malfa, Salina</p>
+</div>
 
 <header id="top" class="st st-split" style="padding: clamp(20px, 2.5vw, 40px) clamp(20px, 3vw, 44px) clamp(64px, 8vw, 120px);">
 <div class="st-text" style="position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 40px;">
@@ -410,5 +439,15 @@ img{max-width:100%}
   });
   document.getElementById('rsvp-another').addEventListener('click',function(){f.reset();sync();msg.textContent='';thanks.hidden=true;f.hidden=false;f.style.display='flex';f.elements.first_name.focus()});
 })();
-</script></body>
+</script><script>
+(function(){
+  var menu=document.getElementById('site-menu'),open=document.querySelector('.nav-mobile .nav-menu-btn'),close=menu.querySelector('.site-menu-close');
+  function set(o){menu.hidden=!o;open.setAttribute('aria-expanded',o);document.documentElement.style.overflow=o?'hidden':'';if(o)close.focus();else open.focus();}
+  open.addEventListener('click',function(){set(true)});
+  close.addEventListener('click',function(){set(false)});
+  menu.querySelectorAll('.site-menu-links a').forEach(function(a){a.addEventListener('click',function(){menu.hidden=true;open.setAttribute('aria-expanded',false);document.documentElement.style.overflow='';});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden)set(false)});
+})();
+</script>
+</body>
 </html>
