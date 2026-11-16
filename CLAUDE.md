@@ -23,7 +23,7 @@ Read this first in any session that touches this repo.
 
 ## Design (locked, "Lagoon & Limestone")
 - Neutral grounds; color comes from photos. Limestone #F3EFE7 page, paper #FBFAF6, ink #121212, caper #5E6440 for small labels, sand #E8E0D2 sparingly.
-- Footer sits on her save-the-date blue-grey wash; couple section and RSVP sit on the lace texture (bookends).
+- Footer is a solid ink (#121212) band: ivory C&G monogram, thin rule, date line (blue-grey wash dropped Nov 15). Couple section and RSVP sit on the lace texture; the RSVP form sits on a solid paper card over the lace.
 - Type: Cormorant Garamond (headings, names), Jost (body, labels, uppercase with letter-spacing), Pinyon Script only twice ("the wedding of" in hero, "benvenuti"). Google Fonts only. No Adobe Fonts on client sites.
 - Ampersand: Garamond Premier Pro vector `images/gpp-amp.svg`.
 - Headings upright (no half-italic). Wedding row has a lemon rule that appears only on hover.
