@@ -10,7 +10,7 @@ Read this first in any session that touches this repo.
 - `version-pool-hero` branch = the earlier design with the Hotel Signum pool photo as the hero. Keep it; it is the fallback if Catherine prefers that hero.
 
 ## Hard rules
-- Never mention Claude, AI, Anthropic or claude.ai anywhere in the site (code, comments, alt text, meta tags, commit messages that might be shown to the client). The client must not see that the site was built with AI.
+- Never mention Claude, AI, Anthropic or claude.ai anywhere in the published site (copy, code, comments, alt text, meta tags). The client must not see that the site was built with AI. Repo commits authored as Claude are fine (Brooke, Nov 15): the repo is private.
 - Keep `<meta name="robots" content="noindex, nofollow">` until Brooke says the site is final.
 - Repo is private: it contains the couple's photos and phone number. Never make it public.
 - Passwords and API keys never go in the repo or the chat.
