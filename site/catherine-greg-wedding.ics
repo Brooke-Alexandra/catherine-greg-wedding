@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Catherine and Greg//Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:catherine-greg-wedding-week-2027@catherine-greg.pages.dev
+DTSTAMP:20261115T000000Z
+DTSTART;VALUE=DATE:20270705
+DTEND;VALUE=DATE:20270709
+SUMMARY:Catherine & Greg's Wedding Week
+LOCATION:Hotel Signum\, Via Scalo 15\, 98050 Malfa ME\, Italy
+DESCRIPTION:Welcome reception Mon Jul 5 · Boat day on Lipari Tue Jul 6 · Wedding Wed Jul 7 · Farewell Thu Jul 8. Details and RSVP: https://catherine-greg.pages.dev
+URL:https://catherine-greg.pages.dev
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

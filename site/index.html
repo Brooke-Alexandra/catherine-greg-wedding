@@ -87,6 +87,9 @@ img{max-width:100%}
 .site-menu-links a:hover{color:#5E6440}
 .site-menu-foot{margin:0;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#5E6440}
 @media (max-width: 760px){nav[aria-label="Main"]{flex-wrap:nowrap!important}.nav-links{display:none!important}.nav-mobile{display:flex;align-items:center;gap:22px}}
+.cal-btn{display:inline-block;min-width:220px;box-sizing:border-box;padding:16px calc(28px - .24em) 16px 28px;border:1px solid #121212;color:#121212;text-decoration:none;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:background-color .3s ease,color .3s ease}
+.cal-btn:hover{background:#121212;color:#F3EFE7}
+.cal-btn:hover img{filter:invert(1)}
 .zoomwrap{overflow:hidden;display:block;min-width:0}
 .zoomwrap > img{display:block;width:100%!important;height:100%!important;transition:transform 1s cubic-bezier(.2,.7,.2,1);will-change:transform}
 .zoomwrap:hover > img{transform:scale(1.04)}
@@ -205,6 +208,13 @@ img{max-width:100%}
 </div>
 <img src="images/pool-umbrellas-sea.jpg" alt="Loungers and white umbrellas around the Hotel Signum pool, the sea beyond" style="width: 100%; height: 280px; object-fit: cover; object-position: 50% 45%;">
 </article>
+<div class="save-week" style="display: flex; flex-direction: column; align-items: center; gap: 24px; padding-top: clamp(64px, 8vw, 96px); text-align: center;">
+<p style="margin: 0; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #5E6440;">Save the week</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+<a class="cal-btn" href="catherine-greg-wedding.ics">Apple <img src="images/gpp-amp.svg" alt="&amp;" style="height: 1.05em; width: auto; vertical-align: -0.2em;"> Outlook</a>
+<a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Catherine+%26+Greg%27s+Wedding+Week&amp;dates=20270705%2F20270709&amp;location=Hotel+Signum%2C+Via+Scalo+15%2C+98050+Malfa+ME%2C+Italy&amp;details=Welcome+reception+Mon+Jul+5+%C2%B7+Boat+day+on+Lipari+Tue+Jul+6+%C2%B7+Wedding+Wed+Jul+7+%C2%B7+Farewell+Thu+Jul+8.+Details+and+RSVP%3A+https%3A%2F%2Fcatherine-greg.pages.dev" target="_blank" rel="noopener">Google Calendar</a>
+</div>
+</div>
 </section>
 
 <section id="stay" style="background: #E8E0D2; padding: clamp(72px, 9vw, 120px) clamp(20px, 4vw, 56px);">
