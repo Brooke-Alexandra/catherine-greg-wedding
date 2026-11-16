@@ -90,6 +90,7 @@ img{max-width:100%}
 .cal-btn{display:inline-block;min-width:220px;box-sizing:border-box;padding:16px calc(28px - .24em) 16px 28px;border:1px solid #121212;color:#121212;text-decoration:none;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:background-color .3s ease,color .3s ease}
 .cal-btn:hover{background:#121212;color:#F3EFE7}
 .cal-btn:hover img{filter:invert(1)}
+.mono img{margin:0 -.06em!important}
 .zoomwrap{overflow:hidden;display:block;min-width:0}
 .zoomwrap > img{display:block;width:100%!important;height:100%!important;transition:transform 1s cubic-bezier(.2,.7,.2,1);will-change:transform}
 .zoomwrap:hover > img{transform:scale(1.04)}
@@ -99,7 +100,7 @@ img{max-width:100%}
 <div style="background: #F3EFE7; color: #121212; font-family: Jost, sans-serif;">
 
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 22px clamp(20px, 4vw, 56px); border-bottom: 1px solid #121212;">
-<a href="#top" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; text-decoration: none;">C <img src="images/gpp-amp.svg" alt="&amp;" style="height: 0.68em; width: auto; vertical-align: -0.02em;"> G</a>
+<a href="#top" class="mono" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; text-decoration: none;">C <img src="images/gpp-amp.svg" alt="&amp;" style="height: 0.68em; width: auto; vertical-align: -0.02em;"> G</a>
 <div class="nav-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 26px; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;">
 <a href="#schedule" style="text-decoration: none;">Schedule</a>
 <a href="#stay" style="text-decoration: none;">Where to Stay</a>
@@ -114,7 +115,7 @@ img{max-width:100%}
 </nav>
 <div id="site-menu" class="site-menu" hidden>
 <div class="site-menu-top">
-<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px;">C <img src="images/gpp-amp.svg" alt="&amp;" style="height: 0.68em; width: auto; vertical-align: -0.02em;"> G</span>
+<span class="mono" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px;">C <img src="images/gpp-amp.svg" alt="&amp;" style="height: 0.68em; width: auto; vertical-align: -0.02em;"> G</span>
 <button type="button" class="nav-menu-btn site-menu-close">Close</button>
 </div>
 <nav aria-label="Menu" class="site-menu-links">
@@ -385,7 +386,7 @@ img{max-width:100%}
 </section>
 
 <footer style="background: #121212; color: #F3EFE7; padding: clamp(72px, 8vw, 112px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center;">
-<p aria-label="Catherine &amp; Greg" style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(48px, 5.5vw, 76px); line-height: 1;">C <img src="images/gpp-amp.svg" alt="" style="height: 0.68em; width: auto; vertical-align: -0.02em; filter: invert(1) sepia(0.15); opacity: 0.95;"> G</p>
+<p aria-label="Catherine &amp; Greg" class="mono" style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(48px, 5.5vw, 76px); line-height: 1;">C <img src="images/gpp-amp.svg" alt="" style="height: 0.68em; width: auto; vertical-align: -0.02em; filter: invert(1) sepia(0.15); opacity: 0.95;"> G</p>
 <p style="margin: -4px 0 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.1;">Catherine <img src="images/gpp-amp.svg" alt="&amp;" style="height: 0.62em; width: auto; vertical-align: -0.02em; filter: invert(1) sepia(0.15); opacity: 0.95;"> Greg</p>
 <div aria-hidden="true" style="width: 40px; height: 1px; background: rgba(243,239,231,0.35);"></div>
 <p style="margin: 0; font-size: 12px; letter-spacing: 0.34em; text-transform: uppercase; color: rgba(243,239,231,0.72);">07 · 07 · 2027 · Malfa, Sicilia</p>
