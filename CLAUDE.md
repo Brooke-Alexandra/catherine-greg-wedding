@@ -19,7 +19,7 @@ Read this first in any session that touches this repo.
 - RSVPs are collected by the site's own form (`#rsvp-form`), not Joy (Catherine asked to leave Joy, Nov 15).
 - The form POSTs to a Google Apps Script web app (`RSVP_ENDPOINT_URL` in `site/index.html`). Source of that script: `rsvp/apps-script.gs`. Each reply appends a row to a Google Sheet shared with Catherine and emails her.
 - Questions mirror her Joy form: wedding (Jul 7), welcome reception (Jul 5), boat day on Lipari (Jul 6), farewell luncheon (Jul 8), optional note. One reply per guest, adults only. If "No" to the wedding, the other events are skipped and recorded as No.
-- Open question with Catherine: deadline says Dec 1 on this site, Jan 1 in her old Joy question.
+- RSVP deadline: January 7, 2027 (Catherine, Nov 20).
 
 ## Design (locked, "Lagoon & Limestone")
 - Neutral grounds; color comes from photos. Limestone #F3EFE7 page, paper #FBFAF6, ink #121212, caper #5E6440 for small labels, sand #E8E0D2 sparingly.
@@ -37,5 +37,7 @@ Read this first in any session that touches this repo.
 - Never use Getty / stock-agency / magazine images.
 
 ## Open items
-- Couple blurb (welcome section placeholder in brackets).
-- Custom domain: register in the couple's name. When it is connected, update the og:url and og:image URLs in `site/index.html` (both branches) from catherine-greg.pages.dev to the new domain.
+- Hero: Catherine chose the photos-of-us-two hero (main), Nov 20. Keep `version-pool-hero` as a backup.
+- Welcome section holds Greg's "Why Salina" note verbatim (Nov 20).
+- Couple's own photos: coming via a shared Google Drive folder.
+- Custom domain: catherine-greg.com (Catherine's pick, Nov 20). Register in the couple's name. When it is connected, update the og:url and og:image URLs in `site/index.html` (both branches) from catherine-greg.pages.dev to the new domain.
