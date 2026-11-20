@@ -1,4 +1,4 @@
-// RSVP receiver for catherine-and-greg.netlify.app
+// RSVP receiver for catherine-greg.com
 // Paste into Extensions > Apps Script on the RSVP Google Sheet, then Deploy > New deployment > Web app
 // (Execute as: Me, Who has access: Anyone). Copy the Web app URL into site/index.html (RSVP_ENDPOINT_URL).
 
