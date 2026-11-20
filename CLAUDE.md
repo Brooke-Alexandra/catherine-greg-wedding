@@ -40,4 +40,4 @@ Read this first in any session that touches this repo.
 - Hero: Catherine chose the photos-of-us-two hero (main), Nov 20. Keep `version-pool-hero` as a backup.
 - Welcome section holds Greg's "Why Salina" note verbatim (Nov 20).
 - Couple's own photos: coming via a shared Google Drive folder.
-- Custom domain: catherine-greg.com (Catherine's pick, Nov 20), registered in Brooke's Cloudflare account; transfer to the couple on request. Bill them the renewal ($11.17/yr). When it is connected, update the og:url and og:image URLs in `site/index.html` (both branches) from catherine-greg.pages.dev to the new domain.
+- Custom domain: catherine-greg.com (Catherine's pick, Nov 20), registered in Brooke's Cloudflare account; transfer to the couple on request. Bill them the renewal ($11.17/yr). Connected Nov 20 as a Pages custom domain (apex + www); site URLs (og tags, .ics, Google Calendar link) use https://catherine-greg.com.
