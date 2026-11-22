@@ -2,7 +2,7 @@
 // Paste into Extensions > Apps Script on the RSVP Google Sheet, then Deploy > New deployment > Web app
 // (Execute as: Me, Who has access: Anyone). Copy the Web app URL into site/index.html (RSVP_ENDPOINT_URL).
 
-var NOTIFY = 'katsia24@hotmail.com';   // who gets an email for each RSVP (comma-separate to add more)
+var NOTIFY = 'katsia24@hotmail.com, brookebetterton5@gmail.com';   // who gets an email for each RSVP (comma-separate to add more)
 var HEADERS = ['Received', 'First name', 'Last name', 'Email', 'Wedding (Jul 7)', 'Welcome reception (Jul 5)', 'Boat day (Jul 6)', 'Farewell luncheon (Jul 8)', 'Note'];
 
 function doPost(e) {
@@ -18,11 +18,18 @@ function doPost(e) {
   var row = [new Date(), clean(p.first_name), clean(p.last_name), clean(p.email),
              clean(p.wedding), clean(p.welcome), clean(p.boat), clean(p.farewell), clean(p.note)];
   sheet.appendRow(row);
+  var guest = (clean(p.guest_first) + ' ' + clean(p.guest_last)).trim();
+  if (guest) {                                        // plus one gets their own row, same answers
+    sheet.appendRow([new Date(), clean(p.guest_first), clean(p.guest_last), '',
+                     clean(p.wedding), clean(p.welcome), clean(p.boat), clean(p.farewell),
+                     'Plus one of ' + clean(p.first_name) + ' ' + clean(p.last_name)]);
+  }
 
   var name = (p.first_name + ' ' + p.last_name).trim();
   var lines = [
     'Name: ' + name,
     'Email: ' + p.email,
+    'Plus one: ' + (guest || '—'),
     '',
     'Wedding (Wed, Jul 7): ' + p.wedding,
     'Welcome reception (Mon, Jul 5): ' + p.welcome,
@@ -35,7 +42,7 @@ function doPost(e) {
   ];
   MailApp.sendEmail({
     to: NOTIFY,
-    subject: 'New RSVP: ' + name + (p.wedding === 'Yes' ? ' (attending)' : ' (declined)'),
+    subject: 'New RSVP: ' + name + (guest ? ' + ' + guest : '') + (p.wedding === 'Yes' ? ' (attending)' : ' (declined)'),
     body: lines.join('\n'),
     replyTo: p.email || undefined
   });

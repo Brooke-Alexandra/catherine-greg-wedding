@@ -39,7 +39,7 @@
 #rsvp-send{align-self:flex-start;height:56px;padding:0 calc(44px - .32em) 0 44px;background:#121212;color:#F3EFE7;border:0;font:12px Jost,sans-serif;letter-spacing:.32em;text-transform:uppercase;cursor:pointer;transition:background-color .3s}
 #rsvp-send:hover{background:#5E6440}
 #rsvp-send[disabled]{opacity:.6;cursor:default}
-#rsvp-thanks[hidden]{display:none!important}
+#rsvp-thanks[hidden],#rsvp-guest[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -300,7 +300,7 @@ img{max-width:100%}
 <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; line-height: 1.3;">Taormina / Mount Etna → Salina</p>
 <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; line-height: 1.3;">Syracuse &amp; Ortigia → Noto → Salina</p>
 <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; line-height: 1.3;">Palermo → Mondello Beach → Cefalù → Salina</p>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #2B2B2B;">These routes work particularly well if you have at least 3–5 days before the wedding.</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #2B2B2B;">These routes work particularly well if you have at least 3–5 days before or after the wedding.</p>
 </div>
 </div>
 </div>
@@ -360,7 +360,7 @@ img{max-width:100%}
 </div>
 <div style="flex: 1.3 1 420px; min-width: 0; background: #FBFAF6; border: 1px solid #E8E0D2; padding: clamp(28px, 4vw, 56px); box-shadow: 0 30px 60px -40px rgba(18,18,18,0.25);">
 <form id="rsvp-form" novalidate style="display: flex; flex-direction: column; gap: 28px;">
-<p style="margin: 0; max-width: 520px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; line-height: 1.35; color: #2B2B2B;">Please reply for each guest. Adults only, please.</p>
+<p style="margin: 0; max-width: 520px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; line-height: 1.35; color: #2B2B2B;">Reply for yourself and, if your invitation includes one, your plus one. Adults only, please.</p>
 <div class="rrow">
 <label class="rf"><span>First name</span><input name="first_name" autocomplete="given-name" required></label>
 <label class="rf"><span>Last name</span><input name="last_name" autocomplete="family-name" required></label>
@@ -370,6 +370,14 @@ img{max-width:100%}
 <label><input type="radio" name="wedding" value="Yes" required><span>Yes, I'll be there to celebrate</span></label>
 <label><input type="radio" name="wedding" value="No"><span>No, sending love from afar</span></label></div></fieldset>
 <div id="rsvp-more" style="display: flex; flex-direction: column; gap: 28px;">
+<fieldset class="rq"><legend>Will you be bringing a plus one?</legend><div class="opts">
+<label><input type="radio" name="plus_one" value="No" required><span>Just me</span></label>
+<label><input type="radio" name="plus_one" value="Yes"><span>Yes, with my plus one</span></label></div></fieldset>
+<div id="rsvp-guest" class="rrow" hidden>
+<label class="rf"><span>Plus one's first name</span><input name="guest_first" autocomplete="off"></label>
+<label class="rf"><span>Plus one's last name</span><input name="guest_last" autocomplete="off"></label>
+<p style="flex-basis: 100%; margin: -6px 0 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 18px; color: #3A3A3A;">Your answers below will count for both of you.</p>
+</div>
 <fieldset class="rq"><legend>Will you join us at our welcome reception on July 5th?</legend><div class="opts">
 <label><input type="radio" name="welcome" value="Yes" required><span>Yes, count me in</span></label>
 <label><input type="radio" name="welcome" value="No"><span>No, I'll miss it</span></label></div></fieldset>
@@ -443,18 +451,18 @@ img{max-width:100%}
   var ENDPOINT='https://script.google.com/macros/s/AKfycbwzFQvfC1GqmuuE2T5M20t-lKPBHu7QgUBFbeFtDyGVVkTh5lK9LQFEuwes-C0oDbuQEw/exec';
   var f=document.getElementById('rsvp-form'); if(!f)return;
   var more=document.getElementById('rsvp-more'), msg=document.getElementById('rsvp-msg'), btn=document.getElementById('rsvp-send'), thanks=document.getElementById('rsvp-thanks');
-  function sync(){var w=f.querySelector('input[name=wedding]:checked');var no=w&&w.value==='No';more.hidden=no;more.style.display=no?'none':'flex';more.querySelectorAll('input').forEach(function(i){i.required=!no&&i.value==='Yes'})}
+  function sync(){var w=f.querySelector('input[name=wedding]:checked');var no=w&&w.value==='No';more.hidden=no;more.style.display=no?'none':'flex';more.querySelectorAll('input[type=radio]').forEach(function(i){i.required=!no&&i.value==='Yes'});var po=f.querySelector('input[name=plus_one]:checked');var g=!no&&po&&po.value==='Yes';document.getElementById('rsvp-guest').hidden=!g;f.elements.guest_first.required=g;f.elements.guest_last.required=g}
   f.addEventListener('change',sync);sync();
   f.addEventListener('submit',function(e){
     e.preventDefault();msg.textContent='';
     var ok=true;f.querySelectorAll('.bad').forEach(function(x){x.classList.remove('bad')});
     ['first_name','last_name','email'].forEach(function(n){var i=f.elements[n];if(!i.value.trim()||(n==='email'&&!i.checkValidity())){ok=false;i.closest('.rf').classList.add('bad')}});
-    var qs=['wedding'];var w=f.querySelector('input[name=wedding]:checked');if(!w||w.value==='Yes')qs=qs.concat(['welcome','boat','farewell']);
+    var qs=['wedding'];var w=f.querySelector('input[name=wedding]:checked');if(!w||w.value==='Yes')qs=qs.concat(['plus_one','welcome','boat','farewell']);var po=f.querySelector('input[name=plus_one]:checked');var withGuest=(!w||w.value==='Yes')&&po&&po.value==='Yes';if(withGuest){['guest_first','guest_last'].forEach(function(n){var i=f.elements[n];if(!i.value.trim()){ok=false;i.closest('.rf').classList.add('bad')}})}
     qs.forEach(function(n){if(!f.querySelector('input[name='+n+']:checked')){ok=false;f.querySelector('input[name='+n+']').closest('fieldset').classList.add('bad')}});
     if(!ok){msg.textContent='Please fill in the highlighted fields.';return}
     if(f.elements.company.value)return;
     var d=new URLSearchParams();['first_name','last_name','email','note'].forEach(function(n){d.append(n,f.elements[n].value.trim())});
-    qs.forEach(function(n){d.append(n,f.querySelector('input[name='+n+']:checked').value)});
+    qs.forEach(function(n){if(n!=='plus_one')d.append(n,f.querySelector('input[name='+n+']:checked').value)});if(withGuest){d.append('guest_first',f.elements.guest_first.value.trim());d.append('guest_last',f.elements.guest_last.value.trim())}
     if(w&&w.value==='No'){['welcome','boat','farewell'].forEach(function(n){d.append(n,'No')})}
     btn.disabled=true;msg.textContent='Sending…';
     fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:d}).then(function(){f.hidden=true;f.style.display='none';thanks.hidden=false;thanks.scrollIntoView({behavior:'smooth',block:'center'})}).catch(function(){msg.textContent='Something went wrong. Please try again, or email Catherine directly.'}).finally(function(){btn.disabled=false});
