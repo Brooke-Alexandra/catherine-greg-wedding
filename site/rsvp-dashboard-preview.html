@@ -59,7 +59,9 @@
   .chip span{opacity:.6;margin-left:6px}
 
   .legend{display:flex;gap:14px;justify-content:flex-end;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:14px 0 10px;border-bottom:1px solid var(--ink)}
-  .legend .cols{display:grid;grid-template-columns:repeat(4,34px);gap:6px;text-align:center}
+  .legend .cols{display:grid;grid-template-columns:repeat(4,34px);gap:6px;text-align:center;letter-spacing:.08em}
+  .legend .cols span{display:flex;flex-direction:column;align-items:center;gap:2px}
+  .legend .cols b{font:400 17px/1 "Cormorant Garamond",Georgia,serif;letter-spacing:0;color:var(--ink)}
   .guest{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;padding:18px 0;border-bottom:1px solid var(--line);align-items:center}
   .guest .who{min-width:0}
   .guest .nm{font:400 23px/1.2 "Cormorant Garamond",Georgia,serif}
@@ -85,7 +87,6 @@
     .stat:nth-child(n+3){border-top:1px solid var(--line)}
     .deadline{text-align:left}
     .legend{justify-content:flex-start}
-    .legend>span:first-child{display:none}
     .guest{grid-template-columns:1fr}
     .ev .name{min-height:0}
     .ev .long{display:none} .ev .short{display:inline}
@@ -125,7 +126,7 @@
       <input class="search" id="q" type="search" placeholder="Search by name or email" aria-label="Search guests">
       <div class="chips" id="chips"></div>
     </div>
-    <div class="legend"><span>Mon · Tue · Wed · Thu</span><div class="cols"><span>5</span><span>6</span><span>7</span><span>8</span></div></div>
+    <div class="legend"><div class="cols"><span>Mon<b>5</b></span><span>Tue<b>6</b></span><span>Wed<b>7</b></span><span>Thu<b>8</b></span></div></div>
     <div id="list"></div>
   </section>
 
