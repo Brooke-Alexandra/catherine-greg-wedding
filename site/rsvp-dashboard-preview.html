@@ -40,9 +40,10 @@
   .ev.main{background:var(--ink);color:var(--lime);border-color:var(--ink)}
   .ev .day{display:flex;align-items:baseline;gap:10px}
   .ev .num{font:400 44px/1 "Cormorant Garamond",Georgia,serif}
-  .ev .dow{font-size:11px;letter-spacing:.28em;text-transform:uppercase}
+  .ev .dow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;white-space:nowrap}
+  .ev .short{display:none}
   .ev .name{font:400 21px/1.2 "Cormorant Garamond",Georgia,serif;min-height:2.4em}
-  .ev .counts{display:flex;gap:18px;font-size:14px}
+  .ev .counts{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
   .ev .counts b{font:500 22px/1 Jost,sans-serif;margin-right:4px}
   .bar{height:3px;background:var(--line);position:relative}
   .bar i{position:absolute;inset:0 auto 0 0;background:var(--caper)}
@@ -87,6 +88,8 @@
     .legend>span:first-child{display:none}
     .guest{grid-template-columns:1fr}
     .ev .name{min-height:0}
+    .ev .long{display:none} .ev .short{display:inline}
+    .events{gap:10px} .ev{padding:18px 16px 16px} .ev .num{font-size:38px} .ev .name{font-size:19px}
   }
 </style>
 </head>
@@ -98,7 +101,7 @@
       <h1>RSVPs</h1>
     </div>
     <div class="deadline">
-      <div class="label">Kindly reply by January 7th</div>
+      <div class="label">RSVP deadline · January 7th</div>
       <div class="big" id="days"></div>
       <div class="sub">July 5–8, 2027 · Malfa, Sicilia</div>
     </div>
@@ -140,10 +143,10 @@ var SHEET_URL = "";
 
 (function(){
   var EVENTS=[
-    {key:'welcome',i:5,num:'05',dow:'Monday',name:'Welcome reception'},
-    {key:'boat',i:6,num:'06',dow:'Tuesday',name:'Boat day & lunch on Lipari'},
-    {key:'wedding',i:4,num:'07',dow:'Wednesday',name:'Wedding ceremony & reception',main:true},
-    {key:'farewell',i:7,num:'08',dow:'Thursday',name:'Farewell luncheon'}];
+    {key:'welcome',i:5,num:'05',dow:'Monday',dw:'Mon',name:'Welcome reception'},
+    {key:'boat',i:6,num:'06',dow:'Tuesday',dw:'Tue',name:'Boat day & lunch on Lipari'},
+    {key:'wedding',i:4,num:'07',dow:'Wednesday',dw:'Wed',name:'Wedding ceremony & reception',main:true},
+    {key:'farewell',i:7,num:'08',dow:'Thursday',dw:'Thu',name:'Farewell luncheon'}];
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
   function yes(v){return String(v).trim().toLowerCase()==='yes'}
 
@@ -174,12 +177,12 @@ var SHEET_URL = "";
   document.getElementById('s-dec').textContent=dec;
   document.getElementById('s-po').textContent=pos;
   var d=Math.ceil((new Date('2027-01-07T23:59:00')-new Date())/864e5);
-  document.getElementById('days').textContent=d>1?d+' days to go':d===1?'1 day to go':'Replies are closed';
+  document.getElementById('days').textContent=d>1?d+' days left to reply':d===1?'1 day left to reply':'The RSVP deadline has passed';
 
   // 4. Event cards.
   document.getElementById('events').innerHTML=EVENTS.map(function(e){
     var y=people.filter(function(g){return yes(g[e.key])}).length, n=people.length-y, pct=people.length?Math.round(y/people.length*100):0;
-    return '<div class="ev'+(e.main?' main':'')+'"><div class="day"><span class="num">'+e.num+'</span><span class="dow label">'+e.dow+'</span></div>'+
+    return '<div class="ev'+(e.main?' main':'')+'"><div class="day"><span class="num">'+e.num+'</span><span class="dow label"><span class="long">'+e.dow+'</span><span class="short">'+e.dw+'</span></span></div>'+
       '<div class="name">'+e.name+'</div><div class="bar"><i style="width:'+pct+'%"></i></div>'+
       '<div class="counts"><span><b>'+y+'</b>coming</span><span><b>'+n+'</b>not</span></div></div>';
   }).join('');
