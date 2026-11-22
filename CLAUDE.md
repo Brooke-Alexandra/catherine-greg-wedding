@@ -20,6 +20,14 @@ Read this first in any session that touches this repo.
 - The form POSTs to a Google Apps Script web app (`RSVP_ENDPOINT_URL` in `site/index.html`). Source of that script: `rsvp/apps-script.gs`. Each reply appends a row to a Google Sheet shared with Catherine and emails her.
 - Questions mirror her Joy form: wedding (Jul 7), welcome reception (Jul 5), boat day on Lipari (Jul 6), farewell luncheon (Jul 8), optional note. One reply per guest, adults only. If "No" to the wedding, the other events are skipped and recorded as No.
 - RSVP deadline: January 7, 2027 (Catherine, Nov 20).
+- Plus ones: optional on the form; the plus one gets their own row (same answers, Note = "Plus one of <name>").
+- Every RSVP is also copied to Brooke's private backup sheet (script property BACKUP_SHEET_ID); emails go to Catherine + Brooke (NOTIFY).
+- To update the script: paste `rsvp/apps-script.gs`, Save, then Deploy > Manage deployments > pencil > New version (never "New deployment": it changes the URL). Never click Run.
+
+## Guest dashboard (catherine-greg.com/guests)
+- Password-protected page served by a Cloudflare Pages Function (`functions/guests.js`). Template: `rsvp/dashboard.html`; after editing it, regenerate `lib/dashboard-template.js` (JSON-escaped copy of the HTML exporting TEMPLATE).
+- The function fetches rows from the Apps Script `doGet` with `?key=DATA_KEY`. Secrets live only in Cloudflare (DASHBOARD_PASSWORD, DATA_KEY, Production + Preview) and Apps Script properties (DATA_KEY, BACKUP_SHEET_ID). Never put them in the repo or the chat.
+- Login cookie lasts 30 days; changing DASHBOARD_PASSWORD logs everyone out. Dashboard counts only each person's latest reply (by name).
 
 ## Design (locked, "Lagoon & Limestone")
 - Neutral grounds; color comes from photos. Limestone #F3EFE7 page, paper #FBFAF6, ink #121212, caper #5E6440 for small labels, sand #E8E0D2 sparingly.
